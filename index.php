@@ -2,18 +2,13 @@
 
 require_once "./Models/Movie.php";
 
-$ilSignoreDegliAnelli = new Movie("Il signore degli anelli", "Peter Jackson", 2001);
-$avengers = new Movie("Avengers", "Josh Whedon", 2012);
-
 var_dump($ilSignoreDegliAnelli);
 var_dump($avengers);
 
 echo $ilSignoreDegliAnelli->title . ":" . $ilSignoreDegliAnelli->isRecent() . "<br>";
 echo $avengers->title . ":" . $avengers->isRecent() . "<br>";
 
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">

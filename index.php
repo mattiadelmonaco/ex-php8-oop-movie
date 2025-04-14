@@ -8,6 +8,10 @@ var_dump($avengers);
 echo $ilSignoreDegliAnelli->title . ":" . $ilSignoreDegliAnelli->isRecent() . "<br>";
 echo $avengers->title . ":" . $avengers->isRecent() . "<br>";
 
+echo $ilSignoreDegliAnelli->getDescription();
+echo "<br>";
+echo $avengers->getDescription();
+
 ?>
 
 <!DOCTYPE html>

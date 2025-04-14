@@ -2,15 +2,31 @@
 
 require_once "./Models/Movie.php";
 
+// per creare istanze di Movie
+$ilSignoreDegliAnelli = new Movie("Il signore degli anelli", "Peter Jackson", 2001, [$fantasy, $azione, $drammatico], 180);
+$avengers = new Movie("Avengers", "Josh Whedon", 2012, [$azione], 10);
+
 var_dump($ilSignoreDegliAnelli);
 var_dump($avengers);
 
+// metodo per vedere se il film è recente oppure no (in classe Movie)
 echo $ilSignoreDegliAnelli->title . ":" . $ilSignoreDegliAnelli->isRecent() . "<br>";
 echo $avengers->title . ":" . $avengers->isRecent() . "<br>";
 
+echo "<hr>";
+
+// metodo per avere una descrizione del film (in classe Movie)
 echo $ilSignoreDegliAnelli->getDescription();
 echo "<br>";
 echo $avengers->getDescription();
+echo "<br>";
+
+echo "<hr>";
+
+// metodo per vedere se il film è lungo o corto (dal trait Duration)
+echo $ilSignoreDegliAnelli->title . ": " . $ilSignoreDegliAnelli->isLongMovie() . " ($ilSignoreDegliAnelli->duration " . "minuti)";
+echo "<br>";
+echo $avengers->title . ": " . $avengers->isLongMovie() . " ($avengers->duration " . "minuti)";
 
 ?>
 

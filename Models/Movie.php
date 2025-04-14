@@ -1,18 +1,24 @@
 <?php
 
+require_once "./Traits/Duration.php"; //importare prima i traits
+
 require_once "./Models/Genre.php";
 
 class Movie {
+
+    use Duration; // associo il trait Duration alla classe Movie
+
     public $title;
     public $director;
     public $year;
     public $genres = [];
 
-    function __construct($_title, $_director, $_year, $_genres) {
+    function __construct($_title, $_director, $_year, $_genres, $_duration) {
         $this->title = $_title;
         $this->director = $_director;
         $this->year = $_year;
         $this->genres = $_genres;
+        $this->duration = $_duration;
     }
 
     public function isRecent() {
@@ -38,7 +44,6 @@ class Movie {
     }
 }
 
-    $ilSignoreDegliAnelli = new Movie("Il signore degli anelli", "Peter Jackson", 2001, [$fantasy, $azione, $drammatico]);
-    $avengers = new Movie("Avengers", "Josh Whedon", 2012, [$azione]);
+    
 
 ?>
